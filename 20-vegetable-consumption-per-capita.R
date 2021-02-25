@@ -14,13 +14,13 @@ vegetable_consumption %>% filter(Country == "World") %>%
        subtitle = "(1961 - 2017)",
        y="Kilogram/Person/Year")
 
-## Top Five Countreis with hight per cap consumption
+## Top Five Countries with highest per cap consumption
 
 vegie_top <- vegetable_consumption %>% filter(Year =="2017") %>%  top_n(5,Vegetables)
 vegie_top <- as.data.frame(vegie_top)
 
 ggplot(vegie_top) + geom_col(aes(x=reorder(Country,Vegetables),y=Vegetables)) + coord_flip() +
-  labs(title="Top Five Countries Rata by Per Capita Consumption")
+  labs(title="Top Five Countries Rated by Per Capita Consumption")
 
 ### Plot Bottom Five Countries by Per Capita Consumption
 
